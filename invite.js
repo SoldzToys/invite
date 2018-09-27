@@ -17,5 +17,17 @@ client.on('message', message => {
       
     }
   
+  if (message.content === `${prefix}say`) {
+    message.channel.send(botmessage);
+  }
+  
+  if (message.content === `${prefix}help`) {
+    message.reply(`?invite, ?say, ?hello`)
+    message.react("❓");
+    
+  }
+  
+  
+  
 });     
 client.login(process.env.BOT_TOKEN);
