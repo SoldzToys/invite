@@ -19,13 +19,18 @@ client.on('message', message => {
   
   if (message.content === `${prefix}say`) {
     message.channel.send(botmessage);
+  
   }
   
   if (message.content === `${prefix}help`) {
-    message.reply(`?invite, ?say, ?hello`)
+    message.reply(`?invite, ?hello`)
     message.react("❓");
     
   }
+  
+  if(message.content === `${prefix}invite`){
+    message.reply("Invite: https://discord.gg/m7AGzBF "); 
+  } 
   
   
   
