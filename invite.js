@@ -28,8 +28,17 @@ client.on('message', (message, args) => {
     
   }
   
-  if(message.content === `${prefix}invite`){
+  if(message.content === `${prefix}botshomeinvite`){
     message.reply("Invite: https://discord.gg/m7AGzBF "); 
+  }
+  
+  if(message.content === `${prefix}invite`){
+      if (message.channel.type == "dm") return;
+
+    message.channel.createInvite().then(a =>
+    message.author.send(a.toString()))
+    message.channel.send(`✅ Invite Sucessfully sent to your DMs. `)
+    
   }
   
   
