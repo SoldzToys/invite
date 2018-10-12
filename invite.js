@@ -23,7 +23,7 @@ client.on('message', (message, args) => {
   }
   
   if (message.content === `${prefix}help`) {
-    message.reply(`?invite, ?hello`)
+    message.reply(`?invite, ?hello, ?botshomeinvite, ?say,`)
     message.react("❓");
     
   }
