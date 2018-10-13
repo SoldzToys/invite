@@ -18,7 +18,7 @@ client.on('message', (message, args, botmessage) => {
   }
   
   if (message.content === `${prefix}help`) {
-    message.channel.send(`?invite, ?hello, ?botshomeinvite, ?say,`)
+    message.channel.send(`?invite, ?hello, ?botshomeinvite`)
     message.react("❓");
     
   }
