@@ -13,7 +13,7 @@ client.user.setActivity('Invite Simulation (?help)');
 client.on('message', (message, args) => {
   
     if (message.content === `${prefix}hello`) {
-    message.reply(`Hello, how are you?`);
+    message.channel.send(`Hello, how are you?`);
       
     }
   
@@ -23,7 +23,7 @@ client.on('message', (message, args) => {
   }
   
   if (message.content === `${prefix}help`) {
-    message.reply(`?invite, ?hello, ?botshomeinvite, ?say,`)
+    message.channel.send(`?invite, ?hello, ?botshomeinvite, ?say,`)
     message.react("❓");
     
   }
