@@ -15,11 +15,6 @@ client.on('message', (message, args, botmessage) => {
     if (message.content === `${prefix}hello`) {
     message.channel.send(`Hello, how are you?`);
       
-    }
-  
-  if (message.content === `${prefix}say`) {
-    message.channel.send(botmessage);
-  
   }
   
   if (message.content === `${prefix}help`) {
@@ -29,7 +24,7 @@ client.on('message', (message, args, botmessage) => {
   }
   
   if(message.content === `${prefix}botshomeinvite`){
-    message.reply("Invite: https://discord.gg/m7AGzBF "); 
+    message.channel.send("Invite: https://discord.gg/m7AGzBF "); 
   }
   
   if(message.content === `${prefix}invite`){
