@@ -10,7 +10,7 @@ client.user.setActivity('Invite Simulation (?help)');
   
 });
 
-client.on('message', (message, args) => {
+client.on('message', (message, args, botmessage) => {
   
     if (message.content === `${prefix}hello`) {
     message.channel.send(`Hello, how are you?`);
