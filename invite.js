@@ -14,7 +14,7 @@ client.on('message', async (message, member) => {
 
   if (message.content === `${prefix}help`) {
 	let helpembed = new Discord.RichEmbed()
-	.setTitle("☑ Help Bar")
+	.setAuthor("☑ Help Bar")
 	.setDescription("Below are the commands for this bot, enjoy and use them respectfully.")
 	.setColor("#7289da")
 	.setThumbnail()
