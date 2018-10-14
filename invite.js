@@ -17,11 +17,11 @@ client.on('message', async (message, member) => {
 	.setTitle(`Below are the commands for this bot, enjoy and use them respectfully.`)
 	.setColor("#7289da")
 	.addField('📧 `?invite`')
-	.addField(`**This command informs the bot to send you an invite to the current server you are in.**`)
+	.addField("**This command informs the bot to send you an invite to the current server you are in.**")
 	.addField('🗣 `?hello`')
-	.addField(`**This simply makes the bot reply to you with a response.**`)
+	.addField("**This simply makes the bot reply to you with a response.**")
 	.addField('🤖 `?botinfo`')
-	.addField(`**This command gives you infomation on the bot and an invite if you want to add it to your server as well.**`) 
+	.addField("**This command gives you infomation on the bot and an invite if you want to add it to your server as well.**") 
 	.setTimestamp();
 	  message.channel.send(helpembed);
     message.react("✅");
