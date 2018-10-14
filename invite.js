@@ -15,8 +15,8 @@ client.on('message', async (message, member) => {
   if (message.content === `${prefix}help`) {
 	let helpembed = new Discord.RichEmbed()
 	.setTitle("Help Bar") 	 
+	.setDescription(`?invite, ?hello, ?botshomeserver`)
 	.setColor("#7289da")
-	.addField(`?invite, ?hello, ?botshomeserver`)
 	.setTimestamp();
 	  message.channel.send(helpembed);
     message.react("❓");
@@ -24,19 +24,20 @@ client.on('message', async (message, member) => {
   
     if (message.content === `${prefix}hello`) {
     	let helloembed = new Discord.RichEmbed()
-	.setTitle("Hello!") 	 
+	.setTitle("Hello!")
+	.setDescription(`Hello! How are you?`)
 	.setColor("#7289da")
-	.addField(`Hello! How are you?`)
 	.setTimestamp();
     message.channel.send(helloembed);
       
   }
   
-  if(message.content === `${prefix}botshomeinvite`){
+  if(message.content === `${prefix}botinvite`){
     	let homeembed = new Discord.RichEmbed()
-	.setTitle("Invitation") 	 
+	.setTitle("Invitation")
+	.setDescription(`Bot's' Home Server: https://discord.gg/m7AGzBF`)
 	.setColor("#7289da")
-	.addField(`https://discord.gg/m7AGzBF`)
+	.addField(`Want to invite me to your server?: https://bit.ly/2OXoxan`)
 	.setTimestamp();
 	  message.channel.send(homeembed); 
   }
