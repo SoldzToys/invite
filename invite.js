@@ -14,12 +14,15 @@ client.on('message', async (message, member) => {
 
   if (message.content === `${prefix}help`) {
 	let helpembed = new Discord.RichEmbed()
-	.setTitle("Help Bar") 	 
-	.setDescription(`?invite, ?hello, ?botshomeserver`)
-	.setColor("#7289da")
+	.setTitle("Help Bar")
+	.setDescription(`Here are the commands for this bot, sweet and simple.`)
+	.addField(`📧`?invite:` This command informs the bot to send you an invite to the current server you are in.`)
+	.addField(`🗣`?hello:` This simply makes the bot reply to you with a response.`)
+	.addField(`🤖`?botinfo:` This command gives you infomation on the bot and an invite if you want to add it to your server as well.`)
+	.setColor("#7289da") 
 	.setTimestamp();
 	  message.channel.send(helpembed);
-    message.react("❓");
+    message.react("✅");
   }
   
     if (message.content === `${prefix}hello`) {
@@ -27,19 +30,26 @@ client.on('message', async (message, member) => {
 	.setTitle("Hello!")
 	.setDescription(`Hello! How are you?`)
 	.setColor("#7289da")
-	.setTimestamp();
     message.channel.send(helloembed);
       
   }
-  
-  if(message.content === `${prefix}botinvite`){
-    	let homeembed = new Discord.RichEmbed()
-	.setTitle("Invitation")
-	.setDescription(`Bot's' Home Server: https://discord.gg/m7AGzBF`)
-	.setColor("#7289da")
-	.addField(`Want to invite me to your server?: https://bit.ly/2OXoxan`)
-	.setTimestamp();
-	  message.channel.send(homeembed); 
+  if(message.content === `${prefix}botinfo`){
+
+    let bicon = client.user.displayAvatarURL;
+    let botembed = new Discord.RichEmbed()
+    .setTitle("Bot Information")
+    .setDescription("Info on **InviteBot**.")
+    .setColor("#7289da")
+    .setThumbnail(bicon)
+    .addField("Bot Name", client.user.username, true)
+    .addField("Bot Tag", client.user.tag, true)
+    .addField("Bot's Home Server", "https://discord.gg/m7AGzBF", true)
+    .addField("Bot Invite", "https://bit.ly/2OXoxan", true)
+    .addField("Guilds", client.guilds.size, true)
+    .addField("Users", client.users.size, true)
+    .addField("Date Of Creation", client.user.createdAt.toLocaleString())
+    .setTimestamp();
+    return message.channel.send(botembed);
   }
   
   if(message.content === `${prefix}invite`){
