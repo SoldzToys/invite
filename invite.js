@@ -40,7 +40,7 @@ client.on('message', async (message, member) => {
     let bicon = client.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
     .setTitle("Bot Information")
-    .setDescription("Info on **InviteBot**.")
+    .setDescription("Info on **InviteBot**:")
     .setColor("#7289da")
     .setThumbnail(bicon)
     .addField("Bot Name", client.user.username, true)
