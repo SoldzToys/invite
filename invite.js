@@ -14,14 +14,15 @@ client.on('message', async (message, member) => {
 
   if (message.content === `${prefix}help`) {
 	let helpembed = new Discord.RichEmbed()
-	.setTitle("Help Bar")
+	.setTitle("☑ Help Bar")
 	.setDescription('📧 `?invite` ')
+	.setColor("#7289da")
+	.setThumbnail()
 	.addField(`**This command informs the bot to send you an invite to the current server you are in.**`)
 	.addField('🗣 `?hello`')
 	.addField(`**This simply makes the bot reply to you with a response.**`)
 	.addField('🤖 `?botinfo`')
-	.addField(`**This command gives you infomation on the bot and an invite if you want to add it to your server as well.**`)
-	.setColor("#7289da") 
+	.addField(`**This command gives you infomation on the bot and an invite if you want to add it to your server as well.**`) 
 	.setTimestamp();
 	  message.channel.send(helpembed);
     message.react("✅");
