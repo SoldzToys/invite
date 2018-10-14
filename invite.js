@@ -12,9 +12,9 @@ client.user.setActivity('Invite Simulation (?help)');
 
 client.on('message', async (message, member) => {
 
-  if (message.content === `${prefix}help`) {
+    if (message.content.startsWith(`${prefix}help`)) {
 	let helpembed = new Discord.RichEmbed()
-	.setDescription("Below are the commands for this bot, enjoy and use them respectfully.")
+	.setTitle(`Below are the commands for this bot, enjoy and use them respectfully.`)
 	.setColor("#7289da")
 	.addField('📧 `?invite`')
 	.addField(`**This command informs the bot to send you an invite to the current server you are in.**`)
@@ -26,8 +26,8 @@ client.on('message', async (message, member) => {
 	  message.channel.send(helpembed);
     message.react("✅");
   }
-  
-    if (message.content === `${prefix}hello`) {
+
+      if (message.content.startsWith(`${prefix}hello`)) {
     	let helloembed = new Discord.RichEmbed()
 	.setTitle("Hello!")
 	.setDescription(`Hello! How are you?`)
@@ -35,7 +35,7 @@ client.on('message', async (message, member) => {
     message.channel.send(helloembed);
       
   }
-  if(message.content === `${prefix}botinfo`){
+   if (message.content.startsWith(`${prefix}botinfo`)) {
 
     let bicon = client.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
@@ -54,7 +54,7 @@ client.on('message', async (message, member) => {
     return message.channel.send(botembed);
   }
   
-  if(message.content === `${prefix}invite`){
+    if (message.content.startsWith(`${prefix}invite`)) {
       if (message.channel.type == "dm") return;
 
     message.channel.createInvite().then(a =>
