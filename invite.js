@@ -10,21 +10,35 @@ client.user.setActivity('Invite Simulation (?help)');
   
 });
 
-client.on('message', (message, args, botmessage) => {
+client.on('message', async (message, member) => {
+
+  if (message.content === `${prefix}help`) {
+	let helpembed = new Discord.RichEmbed()
+	.setTitle("Help Bar") 	 
+	.setColor("#7289da")
+	.addField(`?invite, ?hello, ?botshomeserver`)
+	.setTimestamp();
+	  message.channel.send(helpembed);
+    message.react("❓");
+  }
   
     if (message.content === `${prefix}hello`) {
-    message.channel.send(`Hello, how are you?`);
+    	let helloembed = new Discord.RichEmbed()
+	.setTitle("Hello!") 	 
+	.setColor("#7289da")
+	.addField(`Hello! How are you?`)
+	.setTimestamp();
+    message.channel.send(helloembed);
       
   }
   
-  if (message.content === `${prefix}help`) {
-    message.channel.send(`?invite, ?hello, ?botshomeinvite`)
-    message.react("❓");
-    
-  }
-  
   if(message.content === `${prefix}botshomeinvite`){
-    message.channel.send("Invite: https://discord.gg/m7AGzBF "); 
+    	let homeembed = new Discord.RichEmbed()
+	.setTitle("Invitation") 	 
+	.setColor("#7289da")
+	.addField(`https://discord.gg/m7AGzBF`)
+	.setTimestamp();
+	  message.channel.send(homeembed); 
   }
   
   if(message.content === `${prefix}invite`){
