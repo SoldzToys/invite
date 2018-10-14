@@ -16,11 +16,11 @@ client.on('message', async (message, member) => {
 	let helpembed = new Discord.RichEmbed()
 	.setTitle("Help Bar")
 	.setDescription('📧 `?invite` ')
-	.addField(`This command informs the bot to send you an invite to the current server you are in.`)
-	.setDescription('🗣 `?hello`')
-	.addField(`This simply makes the bot reply to you with a response.`)
-	.setDescription('🤖 `?botinfo`')
-	.addField(`This command gives you infomation on the bot and an invite if you want to add it to your server as well.`)
+	.addField(`**This command informs the bot to send you an invite to the current server you are in.**`)
+	.addField('🗣 `?hello`')
+	.addField(`**This simply makes the bot reply to you with a response.**`)
+	.addField('🤖 `?botinfo`')
+	.addField(`**This command gives you infomation on the bot and an invite if you want to add it to your server as well.**`)
 	.setColor("#7289da") 
 	.setTimestamp();
 	  message.channel.send(helpembed);
