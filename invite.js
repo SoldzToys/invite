@@ -82,7 +82,7 @@ if (message.content.startsWith(`${prefix}serverinfo`)) {
     let server = message.guild.name;
     let serverembed = new Discord.RichEmbed()
     .setTitle("Server Information")
-    .setDescription(`Infomration on ${server}:`)
+    .setDescription(`Information on ${server}:`)
     .setColor("#7289da")
     .addField('Guild ID', message.guild.id, true)
     .addField('Guild Name', message.guild.name, true)
