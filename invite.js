@@ -13,14 +13,16 @@ client.user.setActivity('Invite Simulation (>help)');
 client.on('message', async (message, member) => {
 
     if (message.content.startsWith(`${prefix}help`)) {
+	let server = message.guild.name;
 	let helpembed = new Discord.RichEmbed()
 	.setTitle(`☑ Help Bar`)
 	.setDescription('Below are the commands for this bot, enjoy and use them respectfully.')
 	.setColor("#7289da")
 	.addField('📧 `>invite`', "This command informs the bot to send you an invite to the current server you are in.")
-	.addField('📡 `>anyinvite`', "This command informs the bot to send you an invite of any guild/server there is as long as you provide it with the guild/server ID.")
+	.addField('📡 `>anyinvite`', "This command informs the bot to send you an invite of any guild/server InviteBot is in. (**IMPORTANT NOTE:** InviteBot must be in the you are getting the ID from or it won't work. Just like you can't make an invite without being in the server, neither can InviteBot).")
 	.addField('🗣 `>hello`', "This simply makes the bot reply to you with a response.")
 	.addField('🤖 `>botinfo`', "This command gives you infomation on the bot and an invite if you want to add it to your server as well.")
+	.addField('🔌 `>serverinfo`', `This command gives you infomation on ${server}.`)
 	.setTimestamp();
 	  message.channel.send(helpembed);
     message.react("✅");
@@ -71,9 +73,29 @@ if (message.content.startsWith(`${prefix}anyinvite`)) {
     if (!sv) return message.channel.send(`❌ Enter a valid guild id!`)
     sv.channels.random().createInvite().then(a => 
     message.author.send(a.toString()))
-    return message.channel.send(`📥 Guild Invite Sucessfully sent to your DMs. `)
+    message.channel.send(`📥 Guild Invite Sucessfully sent to your DMs. `)
 
 }
+	
+if (message.content.startsWith(`${prefix}serverinfo`)) {		
+    let sicon = message.guild.iconURL;
+    let server = message.guild.name;
+    let serverembed = new Discord.RichEmbed()
+    .setTitle("Server Information")
+    .setDescription(`Infomration on ${server}:`)
+    .setColor("#7289da")
+    .addField('Guild ID', message.guild.id, true)
+    .addField('Guild Name', message.guild.name, true)
+    .addField('Guild Channel Total', message.guild.channels.size, true)
+    .addField('Guild Member Total', message.guild.memberCount, true)
+    .addField('Guild Role Total', message.guild.roles.size, true)
+    .addField('Guild Region', message.guild.region, true)
+    .addField('Date Of Server Creation', message.guild.createdAt.toLocaleDateString(), true)
+    .addField('Guild Owner', message.guild.owner, true)
+    .setThumbnail(sicon) 
+    .setTimestamp();
+    message.channel.send(serverembed);
+  }
 
   
 });     
