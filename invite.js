@@ -95,7 +95,8 @@ if (message.content.startsWith(`${prefix}serverinfo`)) {
     .setThumbnail(sicon) 
     .setTimestamp();
     message.channel.send(serverembed);
-  }
+}
+});
 	
 client.on('guildCreate', guild => {
   let channel = client.channels.get("501204268611797020");
@@ -125,8 +126,5 @@ client.on('guildDelete', guild => {
       .addField("User Count", guild.memberCount, true)
       .addField("Channel Count", guild.channels.size, true)
   return channel.send(leaveembed);
-});     
-
-  
-});     
+});       
 client.login(process.env.BOT_TOKEN);
