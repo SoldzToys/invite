@@ -64,10 +64,10 @@ client.on('message', async (message, member) => {
 	
 
 if (message.content.startsWith(`${prefix}anyinvite`)) {
- let args = message.content.split(/ +/g).slice(1)
+ let args = message.content.slice(1).split(" ");
     if (message.channel.type == "dm") return;
 	
-    let sv = client.guilds.get(args[0])
+    let sv = client.guilds.get(args[1])
     if (!sv) return message.channel.send(`❌ Enter a valid guild id!`)
     sv.channels.random().createInvite().then(a => 
     message.author.send(a.toString()))
