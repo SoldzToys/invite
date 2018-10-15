@@ -6,7 +6,7 @@ const { prefix, token } = require('./botconfig.json');
 
 client.on(`ready`, () => {
   console.log(`I am ready!`);
-client.user.setActivity('Invite Simulation (#help)');
+client.user.setActivity('Invite Simulation (>help)');
   
 });
 
@@ -17,9 +17,9 @@ client.on('message', async (message, member) => {
 	.setTitle(`☑ Help Bar`)
 	.setDescription('Below are the commands for this bot, enjoy and use them respectfully.')
 	.setColor("#7289da")
-	.addField('📧 `#invite`', "This command informs the bot to send you an invite to the current server you are in.")
-	.addField('🗣 `#hello`', "This simply makes the bot reply to you with a response.")
-	.addField('🤖 `#botinfo`', "This command gives you infomation on the bot and an invite if you want to add it to your server as well.")
+	.addField('📧 `>invite`', "This command informs the bot to send you an invite to the current server you are in.")
+	.addField('🗣 `>hello`', "This simply makes the bot reply to you with a response.")
+	.addField('🤖 `>botinfo`', "This command gives you infomation on the bot and an invite if you want to add it to your server as well.")
 	.setTimestamp();
 	  message.channel.send(helpembed);
     message.react("✅");
@@ -57,7 +57,7 @@ client.on('message', async (message, member) => {
 
     message.channel.createInvite().then(a =>
     message.author.send(a.toString()))
-    message.channel.send(`✅ Invite Sucessfully sent to your DMs. `)
+    message.channel.send(`📥 Invite Sucessfully sent to your DMs. `)
     
   }
   
