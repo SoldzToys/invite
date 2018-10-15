@@ -100,7 +100,7 @@ if (message.content.startsWith(`${prefix}serverinfo`)) {
 client.on('guildCreate', guild => {
   let channel = client.channels.get("501204268611797020");
 
-  const embed = new Discord.RichEmbed()
+  const joinembed = new Discord.RichEmbed()
       .setColor("#7289da")
       .setAuthor(`Joined ${guild.name}`)
       .setThumbnail(guild.iconURL)
@@ -108,7 +108,7 @@ client.on('guildCreate', guild => {
       .addField("Guild ID", guild.id, true)
       .addField("User Count", guild.memberCount, true)
       .addField("Channel Count", guild.channels.size, true)
-  return channel.send(embed);
+  return channel.send(joinembed);
 });
 
 
@@ -116,7 +116,7 @@ client.on('guildCreate', guild => {
 client.on('guildDelete', guild => {
   let channel = client.channels.get("501204268611797020");
 
-  const embed = new Discord.RichEmbed()
+  const leaveembed = new Discord.RichEmbed()
       .setColor("#7289da")
       .setAuthor(`Left ${guild.name}`)
       .setThumbnail(guild.iconURL)
@@ -124,7 +124,7 @@ client.on('guildDelete', guild => {
       .addField("Guild ID", guild.id, true)
       .addField("User Count", guild.memberCount, true)
       .addField("Channel Count", guild.channels.size, true)
-  return channel.send(embed);
+  return channel.send(leaveembed);
 });     
 
   
