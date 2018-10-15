@@ -96,6 +96,36 @@ if (message.content.startsWith(`${prefix}serverinfo`)) {
     .setTimestamp();
     message.channel.send(serverembed);
   }
+	
+client.on('guildCreate', guild => {
+  let channel = client.channels.get("499832353544470539");
+
+  const embed = new Discord.RichEmbed()
+      .setColor("#7289da")
+      .setAuthor(`Joined ${guild.name}`)
+      .setThumbnail(guild.iconURL)
+      .addField("Guild Owner", guild.owner.user.tag)
+      .addField("Guild ID", guild.id, true)
+      .addField("Users", guild.memberCount, true)
+      .addField("Channels", guild.channels.size, true)
+  return channel.send(embed);
+});
+
+
+
+client.on('guildDelete', guild => {
+  let channel = client.channels.get("499832353544470539");
+
+  const embed = new Discord.RichEmbed()
+      .setColor("#7289da")
+      .setAuthor(`Left ${guild.name}`)
+      .setThumbnail(guild.iconURL)
+      .addField("Guild Owner", guild.owner.user.tag)
+      .addField("Guild ID", guild.id, true)
+      .addField("Users", guild.memberCount, true)
+      .addField("Channels", guild.channels.size, true)
+  return channel.send(embed);
+});     
 
   
 });     
