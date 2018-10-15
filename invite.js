@@ -98,7 +98,7 @@ if (message.content.startsWith(`${prefix}serverinfo`)) {
   }
 	
 client.on('guildCreate', guild => {
-  let channel = client.channels.get("501202161368039434");
+  let channel = client.channels.get("499832353544470539");
 
   const embed = new Discord.RichEmbed()
       .setColor("#7289da")
@@ -114,7 +114,7 @@ client.on('guildCreate', guild => {
 
 
 client.on('guildDelete', guild => {
-  let channel = client.channels.get("501202161368039434");
+  let channel = client.channels.get("499832353544470539");
 
   const embed = new Discord.RichEmbed()
       .setColor("#7289da")
