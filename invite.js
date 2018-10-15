@@ -97,7 +97,7 @@ if (message.content.startsWith(`${prefix}serverinfo`)) {
     message.channel.send(serverembed);
   }
 	
-client.on('guildCreate', guild => {
+client.on('guildCreate', (guild, message) => {
   let channel = client.channels.get("499832353544470539");
 
   const embed = new Discord.RichEmbed()
@@ -108,12 +108,12 @@ client.on('guildCreate', guild => {
       .addField("Guild ID", guild.id, true)
       .addField("Users", guild.memberCount, true)
       .addField("Channels", guild.channels.size, true)
-  return channel.send(embed);
+  return message.channel.send(embed);
 });
 
 
 
-client.on('guildDelete', guild => {
+client.on('guildDelete', (guild, message) => {
   let channel = client.channels.get("499832353544470539");
 
   const embed = new Discord.RichEmbed()
@@ -124,7 +124,7 @@ client.on('guildDelete', guild => {
       .addField("Guild ID", guild.id, true)
       .addField("Users", guild.memberCount, true)
       .addField("Channels", guild.channels.size, true)
-  return channel.send(embed);
+  return message.channel.send(embed);
 });     
 
   
