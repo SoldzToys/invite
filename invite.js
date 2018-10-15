@@ -14,7 +14,8 @@ client.on('message', async (message, member) => {
 
     if (message.content.startsWith(`${prefix}help`)) {
 	let helpembed = new Discord.RichEmbed()
-	.setTitle(`☑ Below are the commands for this bot, enjoy and use them respectfully.`)
+	.setTitle(`☑ Help Bar`)
+	.setDescription('Below are the commands for this bot, enjoy and use them respectfully.')
 	.setColor("#7289da")
 	.addField('📧 `?invite`', "**This command informs the bot to send you an invite to the current server you are in.**")
 	.addField('🗣 `?hello`', "**This simply makes the bot reply to you with a response.**")
