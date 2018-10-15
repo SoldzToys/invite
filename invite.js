@@ -104,10 +104,10 @@ client.on('guildCreate', guild => {
       .setColor("#7289da")
       .setAuthor(`Joined ${guild.name}`)
       .setThumbnail(guild.iconURL)
-      .addField("Guild Owner", guild.owner.user.tag)
+      .addField("Guild Owner", guild.owner.user.tag, true)
       .addField("Guild ID", guild.id, true)
-      .addField("Users", guild.memberCount, true)
-      .addField("Channels", guild.channels.size, true)
+      .addField("User Count", guild.memberCount, true)
+      .addField("Channel Count", guild.channels.size, true)
   return channel.send(embed);
 });
 
@@ -120,10 +120,10 @@ client.on('guildDelete', guild => {
       .setColor("#7289da")
       .setAuthor(`Left ${guild.name}`)
       .setThumbnail(guild.iconURL)
-      .addField("Guild Owner", guild.owner.user.tag)
+      .addField("Guild Owner", guild.owner.user.tag, true)
       .addField("Guild ID", guild.id, true)
-      .addField("Users", guild.memberCount, true)
-      .addField("Channels", guild.channels.size, true)
+      .addField("User Count", guild.memberCount, true)
+      .addField("Channel Count", guild.channels.size, true)
   return channel.send(embed);
 });     
 
