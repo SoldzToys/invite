@@ -18,6 +18,7 @@ client.on('message', async (message, member) => {
 	.setDescription('Below are the commands for this bot, enjoy and use them respectfully.')
 	.setColor("#7289da")
 	.addField('📧 `>invite`', "This command informs the bot to send you an invite to the current server you are in.")
+	.addField('📡 `>anyinvite`', "This command informs the bot to send you an invite of any guild/server there is as long as you provide it with the guild/server ID.")
 	.addField('🗣 `>hello`', "This simply makes the bot reply to you with a response.")
 	.addField('🤖 `>botinfo`', "This command gives you infomation on the bot and an invite if you want to add it to your server as well.")
 	.setTimestamp();
@@ -57,9 +58,21 @@ client.on('message', async (message, member) => {
 
     message.channel.createInvite().then(a =>
     message.author.send(a.toString()))
-    message.channel.send(`📥 Invite Sucessfully sent to your DMs. `)
+    message.channel.send(`📥 Guild Invite Sucessfully sent to your DMs. `)
     
   }
+	
+
+if (message.content.startsWith(`${prefix}anyinvite`)) {
+   let args = message.content.slice(1).split(" ");
+    if (message.channel.type == "dm") return;
+	
+    let sv = client.guilds.get(args[0])
+    if (!sv) return message.channel.send(`:x: Enter a valid guild id`)
+    sv.channels.random().createInvite().then(a => message.author.send(a.toString()))
+    return message.channel.send(`📥 Invite Sucessfully sent to your DMs. `)
+
+}
   
   
 });     
