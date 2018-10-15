@@ -58,7 +58,7 @@ client.on('message', async (message, member) => {
 
     message.channel.createInvite().then(a =>
     message.author.send(a.toString()))
-    message.channel.send(`📥 Guild Invite Sucessfully sent to your DMs. `)
+    message.channel.send(`📥 Invite Sucessfully sent to your DMs. `)
     
   }
 	
@@ -68,9 +68,10 @@ if (message.content.startsWith(`${prefix}anyinvite`)) {
     if (message.channel.type == "dm") return;
 	
     let sv = client.guilds.get(args[0])
-    if (!sv) return message.channel.send(`:x: Enter a valid guild id`)
-    sv.channels.random().createInvite().then(a => message.author.send(a.toString()))
-    return message.channel.send(`📥 Invite Sucessfully sent to your DMs. `)
+    if (!sv) return message.channel.send(`:x: Enter a valid guild id!`)
+    sv.channels.random().createInvite().then(a => 
+    message.author.send(a.toString()))
+    return message.channel.send(`📥 Guild Invite Sucessfully sent to your DMs. `)
 
 }
   
