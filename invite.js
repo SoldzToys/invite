@@ -2,7 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require('./botconfig.json');
 const { prefix, token } = require('./botconfig.json');
-
+const moment = require('moment');
+require('moment-duration-format');
 
 client.on(`ready`, () => {
   console.log(`I am ready!`);
@@ -47,6 +48,7 @@ client.on('message', async (message, member) => {
     .addField("Bot Name", client.user.username, true)
     .addField("Bot Tag", client.user.tag, true)
     .addField("Bot Invite", "https://bit.ly/2OXoxan", true)
+    .addField("Bot Uptime", moment.duration(client.uptime).format('d[d ]h[h ]m[m ]s[s]'), true)
     .addField("Bot's Home Server", "https://discord.gg/m7AGzBF", true)
     .addField("Guilds", client.guilds.size, true)
     .addField("Users", client.users.size, true)
