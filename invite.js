@@ -52,7 +52,7 @@ client.on('message', async (message, member) => {
     .addField("Bot's Home Server", "https://discord.gg/m7AGzBF", true)
     .addField("Guilds", client.guilds.size, true)
     .addField("Users", client.users.size, true)
-    .addField("Date Of Creation", client.user.createdAt.toLocaleString())
+    .addField("Date Of Creation", client.user.createdAt.toLocaleString(), true)
     .setTimestamp();
     return message.channel.send(botembed);
   }
