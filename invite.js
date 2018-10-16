@@ -53,7 +53,7 @@ client.on('message', async (message, member) => {
     .addField("Guilds", client.guilds.size, true)
     .addField("Users", client.users.size, true)
     .addField("Date Of Creation", client.user.createdAt.toLocaleString(), true)
-    .setFooter("Created By @Dawn.Bots.INC", "https://i.imgur.com/WYIX5AN.png") 
+    .setFooter("Created By @Dawn.Bots.INC", client.user.displayAvatarURL) 
     .setTimestamp(); 
     return message.channel.send(botembed);
   }
