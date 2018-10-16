@@ -18,7 +18,7 @@ client.on('message', async (message, member) => {
 	.setTitle(`☑ Help Bar`)
 	.setDescription('Below are the commands for this bot, enjoy and use them respectfully.')
 	.setColor("#7289da")
-	.addField('📧 `>invite`', "This command informs the bot to send you an invite to the current server you are in.")
+	.addField('📨 `>invite`', "This command informs the bot to send you an invite to the current server you are in.")
 	.addField('📡 `>anyinvite`', "This command informs the bot to send you an invite of any guild/server InviteBot is in. (**IMPORTANT NOTE:** InviteBot must be in the you are getting the ID from or it won't work. Just like you can't make an invite without being in the server, neither can InviteBot).")
 	.addField('🗣 `>hello`', "This simply makes the bot reply to you with a response.")
 	.addField('🤖 `>botinfo`', "This command gives you infomation on the bot and an invite if you want to add it to your server as well.")
