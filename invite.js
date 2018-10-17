@@ -75,6 +75,7 @@ client.on('message', async (message, member) => {
     .setThumbnail(bicon) 
     .addField("Bot Name", client.user.username, true)
     .addField("Bot Tag", client.user.tag, true)
+    .addField("Bot ID", client.user.id, true)
     .addField("Bot Invite", "https://bit.ly/2OXoxan", true)
     .addField("Bot Uptime", moment.duration(client.uptime).format('d[d ]h[h ]m[m ]s[s]'), true)
     .addField("Bot's Home Server", "https://discord.gg/m7AGzBF", true)
