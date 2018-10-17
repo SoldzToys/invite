@@ -121,7 +121,7 @@ if (message.content.startsWith(`${prefix}serverinfo`)) {
     .addField('Guild Member Total', message.guild.memberCount, true)
     .addField('Guild Role Total', message.guild.roles.size, true)
     .addField('Guild Region', message.guild.region, true)
-    .addField('Date Of Server Creation', message.guild.createdAt.toLocaleDateString(), true)
+    .addField('Date Of Server Creation', message.guild.createdAt.toLocaleString(), true)
     .addField('Guild Owner', message.guild.owner, true)
     .setThumbnail(sicon) 
     .setFooter(`${server}`, sicon)
