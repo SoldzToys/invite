@@ -24,6 +24,7 @@ client.on('message', async (message, member) => {
 	.addField('🗣 `>hello`', "This simply makes the bot reply to you with a response.")
 	.addField('🤖 `>botinfo`', "This command gives you infomation on the bot and an invite if you want to add it to your server as well.")
 	.addField('🔌 `>serverinfo`', `This command gives you infomation on ${server}.`)
+	.addField('👩 `>userinfo`', "This command gives you information on yourself and other users roles, status, tag, etc.") 
 	.setTimestamp();
 	  message.channel.send(helpembed);
     message.react("✅");
@@ -37,6 +38,33 @@ client.on('message', async (message, member) => {
     message.channel.send(helloembed);
       
   }
+	
+			if (message.content.startsWith(`${prefix}userinfo`)) {
+
+            let player = message.mentions.members.first() || message.member
+            let iicon = player.user.displayAvatarURL;
+            let roles = player.roles.map(role => role).join(" ");
+	    let user = player.user
+        if(!user) return message.channel.send("You haven't selected/mentioned a user whose info you want to see.");
+            let userEmbed = new Discord.RichEmbed()
+            .setAuthor(`${user.username}'s Info`, user.displayAvatarURL)
+            .setThumbnail(user.displayAvatarURL)
+            .setColor('#2B547E')
+            .addField('User ID', user.id, true)
+            .addField('Current Tag', user.tag, true)
+            .addField('Server Nickname', `${player.displayName}`, true) 
+            .addField('Highest Member Role', `${player.highestRole.name}`, true)
+            .addField('Roles', `${roles}`)
+            .addField('Game/Playing', `${(user.presence.game && user.presence.game && user.presence.game.name) || 'None'}`, true)
+            .addField('Status', user.presence.status, true)
+            .addField('Bot', user.bot, true)
+            .addField('Joined At:', `${player.joinedAt}`)
+            .addField('Account Created On:', `${player.user.createdAt}`)
+            .setThumbnail(iicon)
+            .setTimestamp();
+	return message.channel.send(userEmbed);
+	}
+	
    if (message.content.startsWith(`${prefix}botinfo`)) {
 
     let bicon = client.user.displayAvatarURL;
