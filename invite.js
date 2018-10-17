@@ -72,7 +72,7 @@ client.on('message', async (message, member) => {
     .setTitle("Bot Information")
     .setDescription("Info on **InviteBot**:")
     .setColor("#7289da")
-    .setThumbnail(bicon)
+    .setThumbnail(bicon) 
     .addField("Bot Name", client.user.username, true)
     .addField("Bot Tag", client.user.tag, true)
     .addField("Bot Invite", "https://bit.ly/2OXoxan", true)
@@ -80,7 +80,7 @@ client.on('message', async (message, member) => {
     .addField("Bot's Home Server", "https://discord.gg/m7AGzBF", true)
     .addField("Guilds", client.guilds.size, true)
     .addField("Users", client.users.size, true)
-    .addField("Date Of Creation", client.user.createdAt.toLocaleString(), true)
+    .addField("Date Of Creation", client.user.createdAt.toLocaleDateString(), true)
     .setFooter("Created By @Dawn.Bots.INC", client.user.displayAvatarURL) 
     .setTimestamp(); 
     return message.channel.send(botembed);
@@ -121,7 +121,7 @@ if (message.content.startsWith(`${prefix}serverinfo`)) {
     .addField('Guild Member Total', message.guild.memberCount, true)
     .addField('Guild Role Total', message.guild.roles.size, true)
     .addField('Guild Region', message.guild.region, true)
-    .addField('Date Of Server Creation', message.guild.createdAt.toLocaleString(), true)
+    .addField('Date Of Server Creation', message.guild.createdAt.toLocaleDateString(), true)
     .addField('Guild Owner', message.guild.owner, true)
     .setThumbnail(sicon) 
     .setFooter(`${server}`, sicon)
