@@ -145,7 +145,17 @@ client.on('guildCreate', guild => {
   return channel.send(joinembed);
 });
 
-
+client.on("guildUpdate", function (oldGuild, newGuild) {
+         let channel = client.channels.get("499832353544470539");
+	 let gicon = newGuild.iconURL;
+        const eeembed = new Discord.RichEmbed()
+            .setColor("#7289da")
+            .setThumbnail(gicon)
+            .setAuthor(`A Guild Has been Updated`, gicon)
+            .addField(`Old Guild Name:`, `${oldGuild}`)
+            .addField(`New Guild Name:`, `${newGuild}`)
+        return channel.send(eeembed);
+}); 
 
 client.on('guildDelete', guild => {
   let channel = client.channels.get("501204268611797020");
