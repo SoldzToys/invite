@@ -89,6 +89,7 @@ client.on('message', async (message, member) => {
   
     if (message.content.startsWith(`${prefix}invite`)) {
       if (message.channel.type == "dm") return;
+	 if (message.author.user) return;
    try{
     await message.channel.createInvite().then(a => 
     message.author.send(a.toString()))
