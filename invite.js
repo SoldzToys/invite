@@ -92,10 +92,11 @@ client.on('message', async (message, member) => {
    try{
     await message.channel.createInvite().then(a => 
     message.author.send(a.toString()))
+    message.channel.send(`📩 Invite Successfully sent to your DMs. `)
    }catch(e){
     message.channel.createInvite().then(a => 
     message.channel.send(a.toString())).then(message => message.delete(30000)); 
-    message.channel.send(`📥 Invite sent to the current channel you are in, this is due to your DMs being locked. It will delete in 30 seconds.`)
+    message.channel.send(`📩 Invite sent to the current channel you are in, this is due to your DMs being locked. It will delete in 30 seconds.`)
   }
 }
 	
@@ -108,7 +109,7 @@ if (message.content.startsWith(`${prefix}anyinvite`)) {
     if (!sv) return message.channel.send(`❌ Enter a valid guild id!`)
     sv.channels.random().createInvite().then(a => 
     message.author.send(a.toString()))
-    message.channel.send(`📥 Guild Invite Successfully sent to your DMs. `)
+    message.channel.send(`📩 Guild Invite Successfully sent to your DMs. `)
 
 }
 	
