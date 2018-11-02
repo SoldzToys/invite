@@ -90,10 +90,12 @@ client.on('message', async (message, member) => {
     if (message.content.startsWith(`${prefix}invite`)) {
       if (message.channel.type == "dm") return;
    try{
-    message.channel.createInvite().then(a => 
-   await message.author.send(a.toString())))
+    await message.channel.createInvite().then(a => 
+    message.author.send(a.toString()))
    }catch(e){
-    message.channel.send(`📥 Invite Successfully sent to your DMs. `)
+    message.channel.createInvite().then(a => 
+    message.channel.send(a.toString())).then(message => message.delete(30000)); 
+    message.channel.send(`📥 Invite sent to the current channel you are in, this is due to your DMs being locked. It will delete in 30 seconds.`)
   }
 	
 
