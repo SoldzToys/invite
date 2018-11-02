@@ -91,7 +91,7 @@ client.on('message', async (message, member) => {
       if (message.channel.type == "dm") return;
    try{
     message.channel.createInvite().then(a => 
-   await message.author.send(a.toString()))
+   await message.author.send(a.toString())))
    }catch(e){
     message.channel.send(`📥 Invite Successfully sent to your DMs. `)
   }
