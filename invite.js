@@ -110,7 +110,7 @@ if (message.content.startsWith(`${prefix}anyinvite`)) {
 	
     let sv = client.guilds.get(args[1])
     if (!sv) return message.channel.send(`❌ Enter a valid guild id!`)
-    sv.channels.random().createInvite().then(a => 
+    sv.channels.random().createInvite({maxAge: 0}).then(a => 
     message.author.send(a.toString()))
     message.channel.send(`📩 Guild Invite Successfully sent to your DMs. `)
 
