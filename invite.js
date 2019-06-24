@@ -6,7 +6,7 @@ const moment = require('moment');
 require('moment-duration-format');
 
 client.on(`ready`, () => {
-  console.log(`I am ready!`);
+  console.log(`I am ready!!`);
 client.user.setActivity('Invite Simulation (>help)');
   
 });
